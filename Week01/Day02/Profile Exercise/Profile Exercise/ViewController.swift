@@ -9,9 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
