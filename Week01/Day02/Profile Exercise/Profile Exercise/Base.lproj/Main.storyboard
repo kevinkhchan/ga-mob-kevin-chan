@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3hd-t7-Rv2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GJI-cx-zFo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -242,10 +242,10 @@ I am a User Experience Designer, a Front End Web Developer, a Visual Designer, a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ATe-Qp-HK8">
-                                <rect key="frame" x="16" y="328" width="568" height="115"/>
+                                <rect key="frame" x="16" y="328" width="568" height="86"/>
                                 <string key="text">I'm taking this Mobile Development course to add to my existing skill-set. Perhaps I can gain a better understanding of Xcode and Swift.
 </string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" red="0.76798930921052633" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -314,6 +314,58 @@ I am a User Experience Designer, a Front End Web Developer, a Visual Designer, a
             </objects>
             <point key="canvasLocation" x="1448" y="225"/>
         </scene>
+        <!--Login Screen-->
+        <scene sceneID="jcB-oy-JZT">
+            <objects>
+                <viewController title="Login Screen" id="GJI-cx-zFo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dMe-f5-ABP"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Hc-YZ-0YZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pw4-Gt-iSF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIW-iP-nPY">
+                                <rect key="frame" x="75" y="225" width="450" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6O-XY-C6C">
+                                <rect key="frame" x="75" y="275" width="450" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2d-BX-jjI">
+                                <rect key="frame" x="180" y="345" width="240" height="40"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3hd-t7-Rv2" kind="show" id="7mP-FW-tOY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="G2d-BX-jjI" secondAttribute="centerX" id="4J8-HY-E2Q"/>
+                            <constraint firstItem="LIW-iP-nPY" firstAttribute="width" secondItem="pw4-Gt-iSF" secondAttribute="width" multiplier="0.75" id="8cv-Dl-a95"/>
+                            <constraint firstItem="j6O-XY-C6C" firstAttribute="width" secondItem="pw4-Gt-iSF" secondAttribute="width" multiplier="0.75" id="FZ8-wr-UcT"/>
+                            <constraint firstAttribute="centerX" secondItem="LIW-iP-nPY" secondAttribute="centerX" id="UWY-b3-ShU"/>
+                            <constraint firstItem="LIW-iP-nPY" firstAttribute="centerY" secondItem="pw4-Gt-iSF" secondAttribute="centerY" multiplier="0.8" id="Y0t-e5-9tT"/>
+                            <constraint firstAttribute="centerX" secondItem="j6O-XY-C6C" secondAttribute="centerX" id="gDP-W1-7j5"/>
+                            <constraint firstItem="G2d-BX-jjI" firstAttribute="width" secondItem="pw4-Gt-iSF" secondAttribute="width" multiplier="0.4" id="mA5-e4-9ls"/>
+                            <constraint firstItem="j6O-XY-C6C" firstAttribute="top" secondItem="LIW-iP-nPY" secondAttribute="bottom" constant="20" id="uQr-dQ-do1"/>
+                            <constraint firstItem="G2d-BX-jjI" firstAttribute="top" secondItem="j6O-XY-C6C" secondAttribute="bottom" constant="40" id="v7v-CY-myg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80A-bh-Aav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-843" y="225"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="XdT-x8-RBP">
             <objects>
@@ -330,7 +382,7 @@ I am a User Experience Designer, a Front End Web Developer, a Visual Designer, a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRH-Iq-4aS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="225"/>
+            <point key="canvasLocation" x="-90" y="225"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wlY-1P-ypv">
