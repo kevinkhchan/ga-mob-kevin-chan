@@ -9,7 +9,7 @@
         <!--My Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="My Profile" id="BYZ-38-t0r" customClass="ViewController" customModule="Profile_Exercise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="My Profile" id="BYZ-38-t0r" customClass="KEVMyProfileViewController" customModule="Profile_Exercise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -219,7 +219,7 @@ I am a User Experience Designer, a Front End Web Developer, a Visual Designer, a
                     <navigationItem key="navigationItem" id="4h3-cK-ufM">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="BIy-Hh-weI">
                             <connections>
-                                <segue destination="gNb-ET-dEh" kind="unwind" unwindAction="unwindFromSegue:" id="8Um-bF-7tN"/>
+                                <segue destination="gNb-ET-dEh" kind="unwind" unwindAction="unwindToMyProfileViewController:" id="1eN-t5-tYH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -232,7 +232,7 @@ I am a User Experience Designer, a Front End Web Developer, a Visual Designer, a
         <!--My Goals-->
         <scene sceneID="6GI-qm-rd8">
             <objects>
-                <viewController title="My Goals" id="DOj-jh-eVL" sceneMemberID="viewController">
+                <viewController title="My Goals" id="DOj-jh-eVL" customClass="ViewController" customModule="Profile_Exercise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nfo-5T-7if"/>
                         <viewControllerLayoutGuide type="bottom" id="0Ih-nT-aOM"/>
@@ -317,7 +317,7 @@ I am a User Experience Designer, a Front End Web Developer, a Visual Designer, a
         <!--Login Screen-->
         <scene sceneID="jcB-oy-JZT">
             <objects>
-                <viewController title="Login Screen" id="GJI-cx-zFo" sceneMemberID="viewController">
+                <viewController title="Login Screen" id="GJI-cx-zFo" customClass="ViewController" customModule="Profile_Exercise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dMe-f5-ABP"/>
                         <viewControllerLayoutGuide type="bottom" id="6Hc-YZ-0YZ"/>
@@ -326,10 +326,10 @@ I am a User Experience Designer, a Front End Web Developer, a Visual Designer, a
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIW-iP-nPY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIW-iP-nPY">
                                 <rect key="frame" x="75" y="225" width="450" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6O-XY-C6C">
                                 <rect key="frame" x="75" y="275" width="450" height="30"/>

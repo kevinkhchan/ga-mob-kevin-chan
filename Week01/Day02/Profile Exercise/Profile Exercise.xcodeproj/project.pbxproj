@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0349B41AA7F62A00067845 /* KEVMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0349B31AA7F62A00067845 /* KEVMyProfileViewController.swift */; };
 		0A3705E11A9F3CB70038175E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3705E01A9F3CB70038175E /* AppDelegate.swift */; };
 		0A3705E31A9F3CB70038175E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3705E21A9F3CB70038175E /* ViewController.swift */; };
 		0A3705E61A9F3CB70038175E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3705E41A9F3CB70038175E /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0349B31AA7F62A00067845 /* KEVMyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KEVMyProfileViewController.swift; path = ViewController/KEVMyProfileViewController.swift; sourceTree = "<group>"; };
 		0A3705DB1A9F3CB70038175E /* Profile Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Profile Exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3705DF1A9F3CB70038175E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A3705E01A9F3CB70038175E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0349B01AA7F5BA00067845 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A3705E21A9F3CB70038175E /* ViewController.swift */,
+				0A0349B31AA7F62A00067845 /* KEVMyProfileViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		0A3705D21A9F3CB70038175E = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0A3705E01A9F3CB70038175E /* AppDelegate.swift */,
-				0A3705E21A9F3CB70038175E /* ViewController.swift */,
+				0A0349B01AA7F5BA00067845 /* ViewControllers */,
 				0A3705E41A9F3CB70038175E /* Main.storyboard */,
 				0A3705E71A9F3CB70038175E /* Images.xcassets */,
 				0A3705E91A9F3CB70038175E /* LaunchScreen.xib */,
@@ -213,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0349B41AA7F62A00067845 /* KEVMyProfileViewController.swift in Sources */,
 				0A3705E31A9F3CB70038175E /* ViewController.swift in Sources */,
 				0A3705E11A9F3CB70038175E /* AppDelegate.swift in Sources */,
 			);
@@ -408,6 +420,7 @@
 				0A3705FC1A9F3CB70038175E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A3705FD1A9F3CB70038175E /* Build configuration list for PBXNativeTarget "Profile ExerciseTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +429,7 @@
 				0A3705FF1A9F3CB70038175E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
