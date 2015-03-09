@@ -16,4 +16,48 @@ class FirstViewController: UIViewController {
     TODO three: Hook up the button to a NEW function (in addition to the two above). Print “You can drink” below the above text if the user is above 21. If they are above 18, print “you can vote”. If they are above 16, print “You can drive”
     TODO four: Hook up the button to a NEW function (in additino to the three above). Print “you can drive” if the user is above 16 but below 18. It should print “You can drive and vote” if the user is above 18 but below 21. If the user is above 21, it should print “you can drive, vote and drink (but not at the same time!”.
     */
+    
+    
+    @IBOutlet weak var firstViewName: UITextField!
+    @IBOutlet weak var firstViewAge: UITextField!
+    @IBOutlet weak var firstViewLabel: UILabel!
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+
+    @IBAction func firstViewButton(sender: AnyObject) {
+        
+        var userName: String
+        var userAge: String
+        var startMessage: String = "Hello, World!"
+        var labelOutput: String = startMessage
+        
+        func errorMessage(errorField: String) {
+            labelOutput = "Please enter your \(errorField)!"
+            firstViewLabel.text = labelOutput
+            labelOutput = startMessage
+        }
+        
+        func greetUser(name: String, age: String) {
+            labelOutput += "\r Hello \(name), you are \(age) years old!"
+        }
+        
+        if firstViewName.text.isEmpty {
+            errorMessage("Name")
+            firstViewName.becomeFirstResponder()
+        } else if firstViewAge.text.isEmpty {
+            errorMessage("Age")
+            firstViewAge.becomeFirstResponder()
+        } else {
+            userName = firstViewName.text
+            userAge = firstViewAge.text
+            // --
+            greetUser(userName, userAge)
+            // --
+            firstViewLabel.text = labelOutput
+        }
+        
+    }
+    
 }
