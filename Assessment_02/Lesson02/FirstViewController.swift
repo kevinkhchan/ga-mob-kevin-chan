@@ -26,22 +26,14 @@ class FirstViewController: UIViewController {
         self.view.endEditing(true)
     }
 
+    var userName: String = ""
+    var userAge: String = ""
+    var labelOutput: String = ""
+    var startMessage: String = "Hello, World!"
+
     @IBAction func firstViewButton(sender: AnyObject) {
         
-        var userName: String
-        var userAge: String
-        var startMessage: String = "Hello, World!"
-        var labelOutput: String = startMessage
-        
-        func errorMessage(errorField: String) {
-            labelOutput = "Please enter your \(errorField)!"
-            firstViewLabel.text = labelOutput
-            labelOutput = startMessage
-        }
-        
-        func greetUser(name: String, age: String) {
-            labelOutput += "\r Hello \(name), you are \(age) years old!"
-        }
+        labelOutput = startMessage
         
         if firstViewName.text.isEmpty {
             errorMessage("Name")
@@ -53,11 +45,22 @@ class FirstViewController: UIViewController {
             userName = firstViewName.text
             userAge = firstViewAge.text
             // --
-            greetUser(userName, userAge)
+            greetUser(userName, age: userAge)
             // --
             firstViewLabel.text = labelOutput
         }
         
     }
+    
+    func errorMessage(errorField: String) {
+        labelOutput = "Please enter your \(errorField)!"
+        firstViewLabel.text = labelOutput
+        labelOutput = startMessage
+    }
+
+    func greetUser(name: String, age: String) {
+        labelOutput += "\r Hello \(name), you are \(age) years old!"
+    }
+
     
 }
