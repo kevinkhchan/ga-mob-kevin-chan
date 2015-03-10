@@ -11,4 +11,23 @@ import UIKit
 class SecondViewController: UIViewController {
 
     //TODO five: Display the cumulative sum of all numbers added every time the ‘add’ button is pressed. Hook up the label, text box and button to make this work.
+
+    @IBOutlet weak var secondViewNumber: UITextField!
+    @IBOutlet weak var secondViewLabel: UILabel!
+
+    var cumulativeValue: Int = 0
+
+    @IBAction func secondViewButton(sender: AnyObject) {
+        if secondViewNumber.text != "" {
+            cumulativeValue += secondViewNumber.text.toInt()!
+            secondViewNumber.text = ""
+            self.view.endEditing(true)
+        }
+        secondViewLabel.text = "\(cumulativeValue)"
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+
 }

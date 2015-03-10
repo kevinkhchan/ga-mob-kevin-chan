@@ -22,10 +22,6 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var firstViewAge: UITextField!
     @IBOutlet weak var firstViewLabel: UILabel!
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.view.endEditing(true)
-    }
-
     var userName: String = ""
     var userAge: Int = 0
     var labelOutput: String = ""
@@ -49,6 +45,7 @@ class FirstViewController: UIViewController {
             userAbleToDo(userAge)
             // --
             firstViewLabel.text = labelOutput
+            self.view.endEditing(true)
         }
         
     }
@@ -87,5 +84,8 @@ class FirstViewController: UIViewController {
         }
     }
 
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
     
 }
