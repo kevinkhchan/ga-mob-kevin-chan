@@ -27,13 +27,12 @@ class FirstViewController: UIViewController {
     }
 
     var userName: String = ""
-    var userAge: String = ""
+    var userAge: Int = 0
     var labelOutput: String = ""
-    var startMessage: String = "Hello, World!"
 
     @IBAction func firstViewButton(sender: AnyObject) {
         
-        labelOutput = startMessage
+        initialGreeting()
         
         if firstViewName.text.isEmpty {
             errorMessage("Name")
@@ -43,23 +42,49 @@ class FirstViewController: UIViewController {
             firstViewAge.becomeFirstResponder()
         } else {
             userName = firstViewName.text
-            userAge = firstViewAge.text
+            userAge = firstViewAge.text.toInt()!
             // --
-            greetUser(userName, age: userAge)
+            userGreeting(userName, age: userAge)
+            userCanDo(userAge)
+            userAbleToDo(userAge)
             // --
             firstViewLabel.text = labelOutput
         }
         
     }
     
+    func initialGreeting() {
+        labelOutput = "Hello, World!"
+    }
+    
     func errorMessage(errorField: String) {
         labelOutput = "Please enter your \(errorField)!"
         firstViewLabel.text = labelOutput
-        labelOutput = startMessage
+        initialGreeting()
     }
 
-    func greetUser(name: String, age: String) {
+    func userGreeting(name: String, age: Int) {
         labelOutput += "\r Hello \(name), you are \(age) years old!"
+    }
+    
+    func userCanDo(age: Int) {
+        if age > 21 {
+            labelOutput += "\r You can drink."
+        } else if age > 18 {
+            labelOutput += "\r You can vote."
+        } else if age > 16 {
+            labelOutput += "\r You can drive."
+        }
+    }
+
+    func userAbleToDo(age: Int) {
+        if age > 21 {
+            labelOutput += "\r You can drive, vote and drink (but not at the same time!"
+        } else if age > 18 {
+            labelOutput += "\r You can drive and vote."
+        } else if age > 16 {
+            labelOutput += "\r You can drive."
+        }
     }
 
     
