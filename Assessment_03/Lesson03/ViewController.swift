@@ -17,5 +17,24 @@ class ViewController: UIViewController {
     TODO four: Hook up the button on the home screen to push ArrayTableViewController into view (via the navigation controller) when tapped. Do this by triggering a segue from this view controller. The method you are looking for is performSegueWithIdentifier. Find the identifier from the storyboard.
     */
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: "showSecondViewController")
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: "showSecondViewController")
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        
+    }
+
+    func showSecondViewController() {
+        self.performSegueWithIdentifier("segueToDoTwoModal", sender: self)
+    }
+    
 }
+
 
