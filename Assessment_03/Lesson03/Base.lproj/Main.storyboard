@@ -50,6 +50,9 @@
                                 <state key="normal" title="Display Table View">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toDoFourButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kXG-8z-mDu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,7 +66,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hzY-Hy-RMA"/>
                     <connections>
-                        <segue destination="tH5-nV-9zA" kind="show" identifier="show" id="O1F-Kb-DN0"/>
+                        <segue destination="tH5-nV-9zA" kind="show" identifier="showTableView" id="O1F-Kb-DN0"/>
                         <segue destination="fp8-hr-dkK" kind="presentation" identifier="segueToDoTwoModal" id="sWv-K8-AeZ"/>
                     </connections>
                 </viewController>
