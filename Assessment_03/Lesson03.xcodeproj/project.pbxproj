@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0213521AB7BDC0000F3A4A /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0213511AB7BDC0000F3A4A /* Dog.swift */; };
+		0A0213541AB7BE39000F3A4A /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0213531AB7BE39000F3A4A /* Cat.swift */; };
+		0A0213571AB7C64A000F3A4A /* Corgi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0213561AB7C64A000F3A4A /* Corgi.swift */; };
+		0A0213591AB7C6B9000F3A4A /* Labrador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0213581AB7C6B9000F3A4A /* Labrador.swift */; };
+		0A02135F1AB7C83F000F3A4A /* Birman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02135E1AB7C83E000F3A4A /* Birman.swift */; };
+		0A0213611AB7C919000F3A4A /* ScottishFold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0213601AB7C919000F3A4A /* ScottishFold.swift */; };
 		0A3C69CF1AB38C2900C1C977 /* ToDoThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C69CE1AB38C2900C1C977 /* ToDoThreeViewController.swift */; };
 		5DCED98919D8DC9B00DE1DC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCED98819D8DC9B00DE1DC2 /* AppDelegate.swift */; };
 		5DCED98B19D8DC9B00DE1DC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCED98A19D8DC9B00DE1DC2 /* ViewController.swift */; };
@@ -28,6 +34,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0213511AB7BDC0000F3A4A /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		0A0213531AB7BE39000F3A4A /* Cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		0A0213561AB7C64A000F3A4A /* Corgi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corgi.swift; sourceTree = "<group>"; };
+		0A0213581AB7C6B9000F3A4A /* Labrador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labrador.swift; sourceTree = "<group>"; };
+		0A02135E1AB7C83E000F3A4A /* Birman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birman.swift; sourceTree = "<group>"; };
+		0A0213601AB7C919000F3A4A /* ScottishFold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScottishFold.swift; sourceTree = "<group>"; };
 		0A3C69CE1AB38C2900C1C977 /* ToDoThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoThreeViewController.swift; sourceTree = "<group>"; };
 		5DCED98319D8DC9B00DE1DC2 /* Lesson03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCED98719D8DC9B00DE1DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +72,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0213551AB7BE62000F3A4A /* Animal Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5DCED9AA19D8DF4E00DE1DC2 /* Animal.swift */,
+				0A0213531AB7BE39000F3A4A /* Cat.swift */,
+				0A0213601AB7C919000F3A4A /* ScottishFold.swift */,
+				0A02135E1AB7C83E000F3A4A /* Birman.swift */,
+				0A0213511AB7BDC0000F3A4A /* Dog.swift */,
+				0A0213561AB7C64A000F3A4A /* Corgi.swift */,
+				0A0213581AB7C6B9000F3A4A /* Labrador.swift */,
+			);
+			name = "Animal Classes";
+			sourceTree = "<group>";
+		};
 		0A3C6A031AB5AC5100C1C977 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				0A3C6A031AB5AC5100C1C977 /* View Controllers */,
-				5DCED9AA19D8DF4E00DE1DC2 /* Animal.swift */,
+				0A0213551AB7BE62000F3A4A /* Animal Classes */,
 				5DCED98819D8DC9B00DE1DC2 /* AppDelegate.swift */,
 				5DCED98C19D8DC9B00DE1DC2 /* Main.storyboard */,
 				5DCED98F19D8DC9B00DE1DC2 /* Images.xcassets */,
@@ -225,10 +251,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A02135F1AB7C83F000F3A4A /* Birman.swift in Sources */,
 				5DCED9A919D8DF0800DE1DC2 /* ArrayTableViewController.swift in Sources */,
+				0A0213611AB7C919000F3A4A /* ScottishFold.swift in Sources */,
+				0A0213541AB7BE39000F3A4A /* Cat.swift in Sources */,
+				0A0213571AB7C64A000F3A4A /* Corgi.swift in Sources */,
 				5DCED9AB19D8DF4E00DE1DC2 /* Animal.swift in Sources */,
+				0A0213521AB7BDC0000F3A4A /* Dog.swift in Sources */,
 				0A3C69CF1AB38C2900C1C977 /* ToDoThreeViewController.swift in Sources */,
 				5DCED98B19D8DC9B00DE1DC2 /* ViewController.swift in Sources */,
+				0A0213591AB7C6B9000F3A4A /* Labrador.swift in Sources */,
 				5DCED98919D8DC9B00DE1DC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
