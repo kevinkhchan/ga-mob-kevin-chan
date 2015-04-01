@@ -34,7 +34,8 @@ class PVMainTableViewController: UITableViewController {
         newLocation = ContentDetails(itemName: "Fisherman's Wharf", itemFilename: "fishermanswharf", itemDescription: "Fisherman's Wharf is a neighbourhood and popular tourist attraction in San Francisco, California. It roughly encompasses the northern waterfront area of San Francisco from Ghirardelli Square or Van Ness Avenue east to Pier 35 or Kearny Street.")
         citySanFrancisco.append(newLocation)
         
-        
+        newLocation = ContentDetails(itemName: "Pioneer Square", itemFilename: "pioneersquare", itemDescription: "Pioneer Square is a neighbourhood in the southwest corner of Downtown Seattle, Washington, USA. It was once the heart of the city: Seattle's founders settled there in 1852, following a brief six-month settlement at Alki Point on the far side of Elliott Bay.The neighbourhood takes its name from a small triangular plaza near the corner of First Avenue and Yesler Way, originally known as Pioneer Place.")
+        citySeattle.append(newLocation)
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -54,27 +55,45 @@ class PVMainTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return citySanFrancisco.count
+        if section == 0 {
+            return citySanFrancisco.count
+        } else {
+            return citySeattle.count
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pvLocationCell", forIndexPath: indexPath) as UITableViewCell
 
+        if indexPath.section == 0 {
+            
+            var currentContent = citySanFrancisco[indexPath.row]
+            cell.textLabel?.text = currentContent.itemName
+            
+        } else {
+            
+            var currentContent = citySeattle[indexPath.row]
+            cell.textLabel?.text = currentContent.itemName
+            
+        }
         // Configure the cell...
-        var currentContent = citySanFrancisco[indexPath.row]
-        cell.textLabel?.text = currentContent.itemName
 
         return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "San Francisco"
+        
+        if section == 0 {
+            return "San Francisco"
+        } else {
+            return "Seattle"
+        }
     }
 
     /*
@@ -120,9 +139,16 @@ class PVMainTableViewController: UITableViewController {
         var secondScene = segue.destinationViewController as PVInfoViewController
         
         // Pass the selected object to the new view controller.
+        
+        
         if let indexPath = self.tableView.indexPathForSelectedRow() {
-            let selectedContent = citySanFrancisco[indexPath.row]
-            secondScene.currentContent = selectedContent
+            if indexPath.section == 0 {
+                let selectedContent = citySanFrancisco[indexPath.row]
+                secondScene.currentContent = selectedContent
+            } else {
+                let selectedContent = citySeattle[indexPath.row]
+                secondScene.currentContent = selectedContent
+            }
         }
     }
     
