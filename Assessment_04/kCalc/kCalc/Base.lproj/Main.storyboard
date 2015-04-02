@@ -23,7 +23,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSS-Qk-Xba" userLabel="ResultScreenView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="atX-XU-33g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="atX-XU-33g">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="72"/>
                                         <color key="textColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,7 +38,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="atX-XU-33g" firstAttribute="bottom" secondItem="dSS-Qk-Xba" secondAttribute="bottomMargin" constant="-18" id="2Di-lk-j1l"/>
-                                    <constraint firstItem="atX-XU-33g" firstAttribute="leading" secondItem="dSS-Qk-Xba" secondAttribute="leadingMargin" id="8mc-l6-rsg"/>
+                                    <constraint firstItem="atX-XU-33g" firstAttribute="leading" secondItem="dSS-Qk-Xba" secondAttribute="leadingMargin" constant="18" id="8mc-l6-rsg"/>
                                     <constraint firstItem="p0z-1o-hLQ" firstAttribute="top" secondItem="dSS-Qk-Xba" secondAttribute="topMargin" constant="12" id="D6T-Zf-GsY"/>
                                     <constraint firstItem="atX-XU-33g" firstAttribute="trailing" secondItem="dSS-Qk-Xba" secondAttribute="trailingMargin" id="Qiu-DB-uMp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="100" id="Uq4-lT-dub"/>
@@ -52,12 +52,12 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Uq4-lT-dub"/>
-                                        <exclude reference="D6T-Zf-GsY"/>
-                                        <exclude reference="Xmp-Ta-JeX"/>
-                                        <exclude reference="hTo-nf-NP4"/>
                                         <exclude reference="2Di-lk-j1l"/>
                                         <exclude reference="8mc-l6-rsg"/>
                                         <exclude reference="Qiu-DB-uMp"/>
+                                        <exclude reference="D6T-Zf-GsY"/>
+                                        <exclude reference="Xmp-Ta-JeX"/>
+                                        <exclude reference="hTo-nf-NP4"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
@@ -67,12 +67,12 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Uq4-lT-dub"/>
-                                        <include reference="D6T-Zf-GsY"/>
-                                        <include reference="Xmp-Ta-JeX"/>
-                                        <include reference="hTo-nf-NP4"/>
                                         <include reference="2Di-lk-j1l"/>
                                         <include reference="8mc-l6-rsg"/>
                                         <include reference="Qiu-DB-uMp"/>
+                                        <include reference="D6T-Zf-GsY"/>
+                                        <include reference="Xmp-Ta-JeX"/>
+                                        <include reference="hTo-nf-NP4"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
@@ -752,9 +752,6 @@
                             <mask key="constraints">
                                 <exclude reference="nVH-r0-mDC"/>
                                 <exclude reference="teH-za-ALt"/>
-                                <exclude reference="25E-9Y-lHw"/>
-                                <exclude reference="daS-JR-TyM"/>
-                                <exclude reference="rz0-tA-XLz"/>
                                 <exclude reference="9r5-4o-xf6"/>
                                 <exclude reference="F4P-X8-mPf"/>
                                 <exclude reference="uks-JH-QZF"/>
@@ -762,6 +759,9 @@
                                 <exclude reference="WdF-46-Qtf"/>
                                 <exclude reference="XhA-Bv-Ez8"/>
                                 <exclude reference="n5t-Vs-MZe"/>
+                                <exclude reference="25E-9Y-lHw"/>
+                                <exclude reference="daS-JR-TyM"/>
+                                <exclude reference="rz0-tA-XLz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -771,9 +771,6 @@
                             <mask key="constraints">
                                 <include reference="nVH-r0-mDC"/>
                                 <include reference="teH-za-ALt"/>
-                                <include reference="25E-9Y-lHw"/>
-                                <include reference="daS-JR-TyM"/>
-                                <include reference="rz0-tA-XLz"/>
                                 <include reference="9r5-4o-xf6"/>
                                 <include reference="F4P-X8-mPf"/>
                                 <include reference="uks-JH-QZF"/>
@@ -781,6 +778,9 @@
                                 <include reference="WdF-46-Qtf"/>
                                 <include reference="XhA-Bv-Ez8"/>
                                 <include reference="n5t-Vs-MZe"/>
+                                <include reference="25E-9Y-lHw"/>
+                                <include reference="daS-JR-TyM"/>
+                                <include reference="rz0-tA-XLz"/>
                             </mask>
                         </variation>
                     </view>

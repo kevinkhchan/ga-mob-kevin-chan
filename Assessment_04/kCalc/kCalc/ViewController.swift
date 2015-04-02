@@ -29,11 +29,12 @@ class ViewController: UIViewController {
     
     @IBAction func tapNumbers(sender: UIButton) {
         
-        let tappedNumber : String! = sender.titleLabel!.text // get the value of the keypress. The number the title of the label for the button.
+        // get the value of the keypress. The number is the title of the label for the button in the .Normal state.
+        let tappedNumber : String! = sender.titleForState(.Normal)!
 
         if calcLabel.text == "0" {
             calcLabelValue = tappedNumber
-        } else {
+        } else if (countElements(calcLabelValue) < 12) {
             calcLabelValue = calcLabelValue.stringByAppendingString(tappedNumber)
         }
         calcLabel.text = calcLabelValue
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
     */
     
     @IBAction func tapDecimal(sender: AnyObject) {
-        if hasDecimal == false {
+        if hasDecimal == false && (countElements(calcLabelValue) < 12) {
             calcLabelValue = calcLabelValue.stringByAppendingString(".")
             calcLabel.text = calcLabelValue
             hasDecimal = true
