@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -22,25 +23,38 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSS-Qk-Xba" userLabel="ResultScreenView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="atX-XU-33g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="atX-XU-33g">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="72"/>
+                                        <color key="textColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to clear the value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0z-1o-hLQ">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="atX-XU-33g" firstAttribute="bottom" secondItem="dSS-Qk-Xba" secondAttribute="bottomMargin" id="2Di-lk-j1l"/>
+                                    <constraint firstItem="atX-XU-33g" firstAttribute="bottom" secondItem="dSS-Qk-Xba" secondAttribute="bottomMargin" constant="-18" id="2Di-lk-j1l"/>
                                     <constraint firstItem="atX-XU-33g" firstAttribute="leading" secondItem="dSS-Qk-Xba" secondAttribute="leadingMargin" id="8mc-l6-rsg"/>
+                                    <constraint firstItem="p0z-1o-hLQ" firstAttribute="top" secondItem="dSS-Qk-Xba" secondAttribute="topMargin" constant="12" id="D6T-Zf-GsY"/>
                                     <constraint firstItem="atX-XU-33g" firstAttribute="trailing" secondItem="dSS-Qk-Xba" secondAttribute="trailingMargin" id="Qiu-DB-uMp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="100" id="Uq4-lT-dub"/>
+                                    <constraint firstItem="p0z-1o-hLQ" firstAttribute="leading" secondItem="dSS-Qk-Xba" secondAttribute="leadingMargin" id="Xmp-Ta-JeX"/>
+                                    <constraint firstItem="p0z-1o-hLQ" firstAttribute="trailing" secondItem="dSS-Qk-Xba" secondAttribute="trailingMargin" id="hTo-nf-NP4"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="atX-XU-33g"/>
+                                        <exclude reference="p0z-1o-hLQ"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Uq4-lT-dub"/>
+                                        <exclude reference="D6T-Zf-GsY"/>
+                                        <exclude reference="Xmp-Ta-JeX"/>
+                                        <exclude reference="hTo-nf-NP4"/>
                                         <exclude reference="2Di-lk-j1l"/>
                                         <exclude reference="8mc-l6-rsg"/>
                                         <exclude reference="Qiu-DB-uMp"/>
@@ -49,9 +63,13 @@
                                 <variation key="heightClass=regular">
                                     <mask key="subviews">
                                         <include reference="atX-XU-33g"/>
+                                        <include reference="p0z-1o-hLQ"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Uq4-lT-dub"/>
+                                        <include reference="D6T-Zf-GsY"/>
+                                        <include reference="Xmp-Ta-JeX"/>
+                                        <include reference="hTo-nf-NP4"/>
                                         <include reference="2Di-lk-j1l"/>
                                         <include reference="8mc-l6-rsg"/>
                                         <include reference="Qiu-DB-uMp"/>
@@ -70,7 +88,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pky-V6-24C" secondAttribute="height" multiplier="1:1" id="O2R-d2-SWo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,7 +113,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Rxi-gE-zQl" secondAttribute="height" multiplier="1:1" id="Hue-KE-wM8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="8">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,7 +138,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qQq-P8-ksP" secondAttribute="height" multiplier="1:1" id="vXd-eu-xsp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="9">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,7 +163,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ngj-Fa-w2l" secondAttribute="height" multiplier="1:1" id="ueW-OT-276"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,7 +188,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g8o-5V-bT5" secondAttribute="height" multiplier="1:1" id="hDW-iP-seJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,7 +213,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HW6-in-N4l" secondAttribute="height" multiplier="1:1" id="PUz-JQ-xiO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,7 +238,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fTk-V8-r27" secondAttribute="height" multiplier="1:1" id="cWZ-J3-5Dm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,7 +263,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jl6-ga-wVu" secondAttribute="height" multiplier="1:1" id="Pxr-nF-fPQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -270,7 +288,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6Wb-GH-qgL" secondAttribute="height" multiplier="1:1" id="a6i-BB-rqe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -295,7 +313,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="715-C9-O5x" secondAttribute="height" multiplier="1:1" id="tyx-zE-qdD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -320,7 +338,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SY9-4T-76h" secondAttribute="height" multiplier="1:1" id="X3k-9j-p5j"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="﹒">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -345,7 +363,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Eaa-MF-tW1" secondAttribute="height" multiplier="1:1" id="sNd-by-Yf5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="=">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -556,7 +574,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VfR-Tq-pin" secondAttribute="height" multiplier="1:1" id="hEM-uI-3Bk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="÷">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -578,7 +596,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Tj2-Xj-akM" secondAttribute="height" multiplier="1:1" id="hSI-2Z-ynw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="×">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -600,7 +618,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BHi-uQ-WmF" secondAttribute="height" multiplier="1:1" id="Iof-JM-lRP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="−">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -622,7 +640,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3TZ-Go-GLt" secondAttribute="height" multiplier="1:1" id="ROj-IQ-eVO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="36"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -723,7 +741,6 @@
                             <constraint firstItem="dSS-Qk-Xba" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="1" id="daS-JR-TyM"/>
                             <constraint firstItem="f79-SJ-6p0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="n5t-Vs-MZe"/>
                             <constraint firstItem="pky-V6-24C" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" constant="-1" id="nVH-r0-mDC"/>
-                            <constraint firstItem="VfR-Tq-pin" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" constant="-1" id="osx-2I-PyB"/>
                             <constraint firstAttribute="trailing" secondItem="dSS-Qk-Xba" secondAttribute="trailing" id="rz0-tA-XLz"/>
                             <constraint firstItem="pky-V6-24C" firstAttribute="width" secondItem="VfR-Tq-pin" secondAttribute="width" id="teH-za-ALt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3j1-cL-kDK" secondAttribute="bottom" id="uks-JH-QZF"/>
@@ -733,7 +750,6 @@
                                 <exclude reference="f79-SJ-6p0"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="osx-2I-PyB"/>
                                 <exclude reference="nVH-r0-mDC"/>
                                 <exclude reference="teH-za-ALt"/>
                                 <exclude reference="25E-9Y-lHw"/>
@@ -753,7 +769,6 @@
                                 <include reference="f79-SJ-6p0"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="osx-2I-PyB"/>
                                 <include reference="nVH-r0-mDC"/>
                                 <include reference="teH-za-ALt"/>
                                 <include reference="25E-9Y-lHw"/>
@@ -771,6 +786,7 @@
                     </view>
                     <connections>
                         <outlet property="calcLabel" destination="atX-XU-33g" id="fSr-Ju-XUQ"/>
+                        <outlet property="resultScreen" destination="dSS-Qk-Xba" id="kbz-u7-AE1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

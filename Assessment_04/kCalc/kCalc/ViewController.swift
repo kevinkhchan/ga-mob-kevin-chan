@@ -17,8 +17,9 @@ class ViewController: UIViewController {
     
     // Add the label as an IBOutlet
 
-    @IBOutlet weak var calcLabel: UILabel!
-    
+    @IBOutlet weak var resultScreen: UIView! // add resultScreen as an IBOutlet to allow for swipe gesture
+    @IBOutlet weak var calcLabel: UILabel! // add calcLabe as an IBOutlet to allow changing of the label
+
     // Respond to the tapping of numbers
     /*
         Connect all the numeral buttons to an IBAction.
@@ -26,10 +27,9 @@ class ViewController: UIViewController {
         If the exisiting number is not 0 then append the number pressed to the end of the string.
     */
     
-    
     @IBAction func tapNumbers(sender: UIButton) {
         
-        let tappedNumber : String! = sender.titleLabel!.text
+        let tappedNumber : String! = sender.titleLabel!.text // get the value of the keypress. The number the title of the label for the button.
 
         if calcLabel.text == "0" {
             calcLabelValue = tappedNumber
@@ -55,15 +55,35 @@ class ViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add left and right swipe gesture to the ResultScreenView
+        
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: "clearCalcLabel")
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: "clearCalcLabel")
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        resultScreen.addGestureRecognizer(leftSwipe)
+        resultScreen.addGestureRecognizer(rightSwipe)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func clearCalcLabel() {
+        
+        // This function is called to reset the calcLabel to 0
+        
+        calcLabel.text = "0" // set calcLabel text to 0
+        calcLabelValue = "0"
+        hasDecimal = false // set value to false to allow decimal point
     }
 
 }
