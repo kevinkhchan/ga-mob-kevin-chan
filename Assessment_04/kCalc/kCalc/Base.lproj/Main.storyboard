@@ -23,35 +23,48 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSS-Qk-Xba" userLabel="ResultScreenView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="atX-XU-33g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="atX-XU-33g" userLabel="Numeral Input Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="72"/>
                                         <color key="textColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to clear the value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0z-1o-hLQ">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to clear the value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0z-1o-hLQ" userLabel="Swipe to Clear Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXv-ei-56P" userLabel="Calculation Sequence Label">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="atX-XU-33g" firstAttribute="bottom" secondItem="dSS-Qk-Xba" secondAttribute="bottomMargin" constant="-18" id="2Di-lk-j1l"/>
+                                    <constraint firstItem="PXv-ei-56P" firstAttribute="leading" secondItem="dSS-Qk-Xba" secondAttribute="leadingMargin" constant="18" id="2Hb-Gh-kag"/>
+                                    <constraint firstItem="PXv-ei-56P" firstAttribute="trailing" secondItem="dSS-Qk-Xba" secondAttribute="trailingMargin" constant="-9" id="6jh-iA-zxU"/>
                                     <constraint firstItem="atX-XU-33g" firstAttribute="leading" secondItem="dSS-Qk-Xba" secondAttribute="leadingMargin" constant="18" id="8mc-l6-rsg"/>
                                     <constraint firstItem="p0z-1o-hLQ" firstAttribute="top" secondItem="dSS-Qk-Xba" secondAttribute="topMargin" constant="12" id="D6T-Zf-GsY"/>
                                     <constraint firstItem="atX-XU-33g" firstAttribute="trailing" secondItem="dSS-Qk-Xba" secondAttribute="trailingMargin" id="Qiu-DB-uMp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="100" id="Uq4-lT-dub"/>
                                     <constraint firstItem="p0z-1o-hLQ" firstAttribute="leading" secondItem="dSS-Qk-Xba" secondAttribute="leadingMargin" id="Xmp-Ta-JeX"/>
                                     <constraint firstItem="p0z-1o-hLQ" firstAttribute="trailing" secondItem="dSS-Qk-Xba" secondAttribute="trailingMargin" id="hTo-nf-NP4"/>
+                                    <constraint firstItem="PXv-ei-56P" firstAttribute="bottom" secondItem="dSS-Qk-Xba" secondAttribute="bottomMargin" id="p5K-RR-Een"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="atX-XU-33g"/>
                                         <exclude reference="p0z-1o-hLQ"/>
+                                        <exclude reference="PXv-ei-56P"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Uq4-lT-dub"/>
+                                        <exclude reference="2Hb-Gh-kag"/>
+                                        <exclude reference="6jh-iA-zxU"/>
+                                        <exclude reference="p5K-RR-Een"/>
                                         <exclude reference="2Di-lk-j1l"/>
                                         <exclude reference="8mc-l6-rsg"/>
                                         <exclude reference="Qiu-DB-uMp"/>
@@ -64,9 +77,13 @@
                                     <mask key="subviews">
                                         <include reference="atX-XU-33g"/>
                                         <include reference="p0z-1o-hLQ"/>
+                                        <include reference="PXv-ei-56P"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Uq4-lT-dub"/>
+                                        <include reference="2Hb-Gh-kag"/>
+                                        <include reference="6jh-iA-zxU"/>
+                                        <include reference="p5K-RR-Een"/>
                                         <include reference="2Di-lk-j1l"/>
                                         <include reference="8mc-l6-rsg"/>
                                         <include reference="Qiu-DB-uMp"/>
@@ -78,6 +95,10 @@
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="t4a-8W-wJ0" appends="YES" id="AEq-z4-Hhf"/>
+                                    <outletCollection property="gestureRecognizers" destination="WMp-80-SRc" appends="YES" id="WbM-BP-mmR"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3j1-cL-kDK" userLabel="NumericPadView">
                                 <rect key="frame" x="0.0" y="100" width="450" height="450"/>
@@ -378,6 +399,9 @@
                                                 <include reference="sNd-by-Yf5"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="tapOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ETr-sx-tdf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -589,6 +613,9 @@
                                                 <include reference="hEM-uI-3Bk"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="tapOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dH-BZ-J4n"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj2-Xj-akM">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -611,6 +638,9 @@
                                                 <include reference="hSI-2Z-ynw"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="tapOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIA-Uf-iOg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHi-uQ-WmF">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -633,6 +663,9 @@
                                                 <include reference="Iof-JM-lRP"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="tapOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oJp-jn-NzG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TZ-Go-GLt">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -655,6 +688,9 @@
                                                 <include reference="ROj-IQ-eVO"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="tapOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ef6-Ia-EVu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -786,10 +822,22 @@
                     </view>
                     <connections>
                         <outlet property="calcLabel" destination="atX-XU-33g" id="fSr-Ju-XUQ"/>
+                        <outlet property="calcSequenceLabel" destination="PXv-ei-56P" id="lQR-Fx-UeU"/>
+                        <outlet property="clearResultScreenInstructions" destination="p0z-1o-hLQ" id="4VI-cO-P6a"/>
                         <outlet property="resultScreen" destination="dSS-Qk-Xba" id="kbz-u7-AE1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="t4a-8W-wJ0">
+                    <connections>
+                        <action selector="swipeToClearResultScreen:" destination="BYZ-38-t0r" id="gia-0Z-bDb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="WMp-80-SRc">
+                    <connections>
+                        <action selector="swipeToClearResultScreen:" destination="BYZ-38-t0r" id="PFj-Jy-2ll"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="375" y="336.75"/>
         </scene>
