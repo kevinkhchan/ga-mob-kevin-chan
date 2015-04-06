@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     var calcLabelValue: String! // start with no value in the label as it is 0
     var hasDecimal: Bool = false // has the decimal been pressed - start with no
     var hasCalculation: Bool = false // is there a calculation in progress - start with no
+    let errorMessage: String = "Error!"
+    let clearValueMessage: String = "Swipe to clear this value"
+    let clearCalculationMessage: String = "Swipe to clear the calcuation"
     
     var calcSequence = []
     var previousCalcValue: Double!
@@ -32,8 +35,14 @@ class ViewController: UIViewController {
     
     // Respond to the swipe gesture in the ResultScreenView to clear values and reset to 0
     @IBAction func swipeToClearResultScreen(sender: UISwipeGestureRecognizer) {
-        clearResultScreen() // clear the ResultScreenView
-        clearSwipeLabel() // remove the swipe to clear instruction
+        if clearResultScreenInstructions.text == clearCalculationMessage {
+            previousCalcValue = 0
+            clearResultScreen() // clear the ResultScreenView
+            clearSwipeLabel() // remove the swipe to clear instruction
+        } else {
+            clearResultScreen() // clear the ResultScreenView
+            clearResultScreenInstructions.text = clearCalculationMessage
+        }
     }
     
     
@@ -60,7 +69,7 @@ class ViewController: UIViewController {
         }
         if calcLabelValue == nil {
             calcLabelValue = tappedNumber
-            clearResultScreenInstructions.text = "Swipe to clear the value"
+            clearResultScreenInstructions.text = clearValueMessage
         } else if (countElements(calcLabelValue) < 12) {
             calcLabelValue = calcLabelValue.stringByAppendingString(tappedNumber)
         }
@@ -89,7 +98,7 @@ class ViewController: UIViewController {
         }
         if calcLabelValue == nil{
             calcLabelValue = "0"
-            clearResultScreenInstructions.text = "Swipe to clear the value"
+            clearResultScreenInstructions.text = clearValueMessage
         }
         if hasDecimal == false && (countElements(calcLabelValue) < 11) {
             calcLabelValue = calcLabelValue.stringByAppendingString(".")
@@ -100,8 +109,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func tapOperand(sender: UIButton) {
+        if calcLabel.text == errorMessage {
+            return
+        }
         if previousCalcValue == nil {
-            if calcLabelValue != nil {
+            if calcLabelValue != nil || calcLabel.text != "Error" {
                 previousCalcValue = (calcLabelValue as NSString).doubleValue
             } else {
                 previousCalcValue = 0
@@ -119,8 +131,10 @@ class ViewController: UIViewController {
                     previousCalcValue = calcMultiplication(previousCalcValue, secondValue: currentCalcValue)
                 case "÷":
                     if currentCalcValue == 0 {
-                        calcLabel.text = "Error!"
+                        calcLabel.text = errorMessage
                         resetLabelValue()
+                        clearCalcSequence = true
+                        clearResultScreenInstructions.text = clearCalculationMessage
                         return
                     } else {
                         previousCalcValue = calcDivision(previousCalcValue, secondValue: (calcLabelValue as NSString).doubleValue)
@@ -159,6 +173,7 @@ class ViewController: UIViewController {
         if calcOperand == "=" {
             if previousCalcValue != nil {
                 clearCalcSequence = true
+                clearResultScreenInstructions.text = clearCalculationMessage
             }
         } else {
             clearCalcSequence = false
