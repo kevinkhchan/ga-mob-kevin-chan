@@ -34,16 +34,20 @@ class ViewController: UIViewController {
     
     
     // Respond to the swipe gesture in the ResultScreenView to clear values and reset to 0
+    /*
+        On swipe, if the current instruction is set to clear the calculation then clear the variable for the stored calculation (to nil), set the calculator screen label to 0, and clear the current instruction.
+        If the variable for the stored calculation contains a value then set the instruction to clear the calculation otherwise clear the current instruction. Set the calculator screen label to 0.
+    */
     @IBAction func swipeToClearResultScreen(sender: UISwipeGestureRecognizer) {
         if clearResultScreenInstructions.text == clearCalculationMessage {
             previousCalcValue = nil
             clearResultScreen() // clear the ResultScreenView
-            clearSwipeLabel() // remove the swipe to clear instruction
+            clearSwipeLabel() // remove the instruction
         } else {
             if previousCalcValue != nil {
                 clearResultScreenInstructions.text = clearCalculationMessage
             } else {
-                clearSwipeLabel()
+                clearSwipeLabel() // remove the instructions
             }
             clearResultScreen() // clear the ResultScreenView
         }
@@ -56,12 +60,17 @@ class ViewController: UIViewController {
         Check if the exisiting number is 0. If so replace with the number pressed.
         If the exisiting number is not 0 then append the number pressed to the end of the string.
     */
-    
     @IBAction func tapNumbers(sender: UIButton) {
         
+        // disable the tap if there is an error message
+        if calcLabel.text == errorMessage {
+            return
+        }
+
         // get the value of the keypress. The number is the title of the label for the button in the .Normal state.
-        
         let tappedNumber : String! = sender.titleForState(.Normal)!
+        
+        // determine if the calculator screen label should reset to start with a new value (and if the calculator sequence should be cleared) with the tap
         if clearLabelValue == true {
             resetLabelValue()
             clearLabelValue = false
@@ -71,6 +80,8 @@ class ViewController: UIViewController {
             previousCalcValue = nil
             clearCalcSequence = false
         }
+        
+        // determine if the tapped number should start a new sequence of numbers or append to the current sequence of numbers (up to a maximum of 12 characters).
         if calcLabelValue == nil {
             calcLabelValue = tappedNumber
             clearResultScreenInstructions.text = clearValueMessage
@@ -87,10 +98,13 @@ class ViewController: UIViewController {
         Add the decimal point if there is no existing decimal point.
     */
     @IBAction func tapDecimal(sender: UIButton) {
-        // Change the calcLabelValue to 0 if it is nil.
-        /*
-            The nil state throws back an error when the countElements is applied to the calcLabelValue.
-        */
+        
+        // disable the tap if there is an error message
+        if calcLabel.text == errorMessage {
+            return
+        }
+        
+        // determine if the calculator screen label should reset to start with a new value (and if the calculator sequence should be cleared) with the tap
         if clearLabelValue == true {
             resetLabelValue()
             clearLabelValue = false
@@ -100,10 +114,15 @@ class ViewController: UIViewController {
             previousCalcValue = nil
             clearCalcSequence = false
         }
+        
+        // Change the calcLabelValue to 0 if it is nil. The nil state throws back an error when the countElements is applied to the calcLabelValue.
         if calcLabelValue == nil{
             calcLabelValue = "0"
             clearResultScreenInstructions.text = clearValueMessage
         }
+        
+
+        // add the decimal point if there is no exisiting decimal point. Set the boolean for the existance of a decimal point to true
         if hasDecimal == false && (countElements(calcLabelValue) < 11) {
             calcLabelValue = calcLabelValue.stringByAppendingString(".")
             calcLabel.text = calcLabelValue
@@ -113,9 +132,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func tapOperand(sender: UIButton) {
+        
+        // disable the tap if there is an error message
         if calcLabel.text == errorMessage {
             return
         }
+        
         if previousCalcValue == nil {
             if calcLabelValue != nil {
                 previousCalcValue = (calcLabelValue as NSString).doubleValue
@@ -168,7 +190,7 @@ class ViewController: UIViewController {
         
         //
         /*
-
+            Set the operand to the value of the tapped button for the calculation that occurs in the next operation. Set the boolean to clear the label for the calculator screen when a numeral or decimal is tapped. Clear the stored calculator value for the label.
         */
         calcOperand = sender.titleForState(.Normal)!
         clearLabelValue = true
@@ -219,28 +241,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // 
     //  Function to set the ResultScreenView to 0 and reset associated variables
-        /*
-        set the calculator label variable to 0
-        set the calculator label text to match the variable
-        set the decimal boolean variable to false
-        */
-    //
     func clearResultScreen() {
         resetLabelValue()
         calcLabel.text = "0" // set calcLabel text to 0
     }
     
+    // Function to clear the stored calculator value label (set to nil) and set the boolean for the existance of a decimal point to false to allow for the addition of a decimal point
     func resetLabelValue() {
         calcLabelValue = nil
         hasDecimal = false // set value to false to allow decimal point
     }
     
+    // Function to clear the current instruction on screen
     func clearSwipeLabel() {
         self.clearResultScreenInstructions.text = ""
     }
     
+    // Function to clear the calculation sequence on screen
     func clearCalculationSequenceLabel() {
         self.calcSequenceLabel.text = ""
     }
