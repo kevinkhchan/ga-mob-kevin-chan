@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var hasCalculation: Bool = false // is there a calculation in progress - start with no
     let errorMessage: String = "Error!" // set the errorMessage to ensure consistency
     let clearValueMessage: String = "Swipe to clear this value" // set the swipe message to clear screen value
-    let clearCalculationMessage: String = "Swipe to clear the calcuation" // set the swipe messate to clear the calculation
+    let clearCalculationMessage: String = "Swipe to clear the calculation" // set the swipe messate to clear the calculation
     
     var calcSequence = [] // optional array to use in a future version
     var previousCalcValue: Double! // variable to store the previous value of a calculation which will become the first value in a calculation
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     // Respond to the swipe gesture in the ResultScreenView to clear values and reset to 0
     @IBAction func swipeToClearResultScreen(sender: UISwipeGestureRecognizer) {
         if clearResultScreenInstructions.text == clearCalculationMessage {
-            previousCalcValue = 0
+            previousCalcValue = nil
             clearResultScreen() // clear the ResultScreenView
             clearSwipeLabel() // remove the swipe to clear instruction
         } else {
