@@ -15,21 +15,21 @@ class ViewController: UIViewController {
     var calcLabelValue: String! // start with no value in the label as it is 0
     var hasDecimal: Bool = false // has the decimal been pressed - start with no
     var hasCalculation: Bool = false // is there a calculation in progress - start with no
-    let errorMessage: String = "Error!"
-    let clearValueMessage: String = "Swipe to clear this value"
-    let clearCalculationMessage: String = "Swipe to clear the calcuation"
+    let errorMessage: String = "Error!" // set the errorMessage to ensure consistency
+    let clearValueMessage: String = "Swipe to clear this value" // set the swipe message to clear screen value
+    let clearCalculationMessage: String = "Swipe to clear the calcuation" // set the swipe messate to clear the calculation
     
-    var calcSequence = []
-    var previousCalcValue: Double!
-    var calcOperand: String!
-    var clearCalcSequence: Bool = false
-    var clearLabelValue:Bool = false
+    var calcSequence = [] // optional array to use in a future version
+    var previousCalcValue: Double! // variable to store the previous value of a calculation which will become the first value in a calculation
+    var calcOperand: String! // variable to store the operand to be used in the calculation
+    var clearCalcSequence: Bool = false // variable to store boolean to indicate if the calculation sequence should be cleared by the swipe gesture
+    var clearLabelValue:Bool = false // variable to store boolean to indicate if the label on the screen should be cleared by the swipe gesture
     
     // Add the label as an IBOutlet
 
-    @IBOutlet weak var resultScreen: UIView! // add resultScreen as an IBOutlet to allow for swipe gesture
-    @IBOutlet weak var calcLabel: UILabel! // add calcLabe as an IBOutlet to allow changing of the label
-    @IBOutlet weak var clearResultScreenInstructions: UILabel!
+    @IBOutlet weak var resultScreen: UIView! // add the view to allow for the recognition of swipe gestures to clear the labels
+    @IBOutlet weak var calcLabel: UILabel! // add label to display the values corresponding to calculations and input via the numeral buttons
+    @IBOutlet weak var clearResultScreenInstructions: UILabel! // add the label to provide instructions for clearing the calculator screen
     @IBOutlet weak var calcSequenceLabel: UILabel!
     
     
@@ -40,8 +40,12 @@ class ViewController: UIViewController {
             clearResultScreen() // clear the ResultScreenView
             clearSwipeLabel() // remove the swipe to clear instruction
         } else {
+            if previousCalcValue != nil {
+                clearResultScreenInstructions.text = clearCalculationMessage
+            } else {
+                clearSwipeLabel()
+            }
             clearResultScreen() // clear the ResultScreenView
-            clearResultScreenInstructions.text = clearCalculationMessage
         }
     }
     
@@ -113,7 +117,7 @@ class ViewController: UIViewController {
             return
         }
         if previousCalcValue == nil {
-            if calcLabelValue != nil || calcLabel.text != "Error" {
+            if calcLabelValue != nil {
                 previousCalcValue = (calcLabelValue as NSString).doubleValue
             } else {
                 previousCalcValue = 0
@@ -152,6 +156,10 @@ class ViewController: UIViewController {
 
         */
         var calcLabelString = "\(previousCalcValue)"
+        if suffix(calcLabelString, 2) == ".0" {
+            let endIndex = countElements(calcLabelString) - 2
+            calcLabelString = calcLabelString.substringToIndex(advance(calcLabelString.startIndex, endIndex))
+        }
         if countElements(calcLabelString) > 12 {
             calcLabel.text = calcLabelString.substringToIndex(advance(calcLabelString.startIndex, 12))
         } else {
@@ -164,7 +172,7 @@ class ViewController: UIViewController {
         */
         calcOperand = sender.titleForState(.Normal)!
         clearLabelValue = true
-        // resetLabelValue()
+        resetLabelValue()
         
         //
         /*
