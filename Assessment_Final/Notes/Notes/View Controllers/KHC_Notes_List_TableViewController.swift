@@ -104,9 +104,11 @@ class KHC_Notes_List_TableViewController: PFQueryTableViewController {
     // MARK: - Navigation
     //----------------------------------------------------------------------
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Preparation of segues for navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "KHC_Notes_ContentView_Segue" {
+            
             // Get the new view controller using [segue destinationViewController]
             var segueToView = segue.destinationViewController as! KHC_Notes_Content_ViewController
             
@@ -114,32 +116,34 @@ class KHC_Notes_List_TableViewController: PFQueryTableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 segueToView.currentObject = objectAtIndexPath(indexPath)
             }
+            
         }
+        
     }
 
     //----------------------------------------------------------------------
     // MARK: - User Interaction
     //----------------------------------------------------------------------
     
-    // Support conditional editing of the table view
+    // Enable conditional editing of the table view
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         
         return true
         
     }
     
-    // Support editing the table view
+    // Editing the table view
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
             if editingStyle == .Delete {
                 
-                    
                     let objectToDelete = objectAtIndexPath(indexPath)
                     
                     SVProgressHUD.showWithStatus("Deleting", maskType: SVProgressHUDMaskType.Black)
                     
                     objectToDelete?.deleteInBackgroundWithBlock({
                         (success, error) -> Void in
+                        
                         if success {
                             
                             // reload objects
@@ -166,11 +170,9 @@ class KHC_Notes_List_TableViewController: PFQueryTableViewController {
                             // reload objects
                             self.loadObjects()
                         }
+                        
                     })
                 
-            }
-            else if editingStyle == .Insert {
-                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
             }
     }
     

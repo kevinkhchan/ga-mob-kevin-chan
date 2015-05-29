@@ -63,17 +63,32 @@ class KHC_Notes_Content_ViewController: UIViewController {
                 object.saveInBackgroundWithBlock({ (success, error) -> Void in
                     
                     if success {
+                        
                         // Dismiss the progress HUD
                         SVProgressHUD.dismiss()
 
                         // Return to Notes List table view
                         self.navigationController?.popViewControllerAnimated(true)
+                        
                     }
                     else {
+                        
                         // Stop the progress HUD and display Error message
-                        SVProgressHUD.showErrorWithStatus("Note not saved!", maskType: SVProgressHUDMaskType.Black)
+                        SVProgressHUD.dismiss()
+                        
+                        // Display alert using UIAlertController
+                        // Use UIAlertView for iOS < 8
+                        let alert = UIAlertController(title: "Failed to Save",
+                            message: "Please try again",
+                            preferredStyle: .Alert)
+                        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        alert.addAction(okAction)
+                        self.presentViewController(alert, animated: true, completion: nil)
+                        
                     }
+                    
                 })
+                
             }
         }
         else {
@@ -91,6 +106,7 @@ class KHC_Notes_Content_ViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
 
         }
+        
     }
     
     //----------------------------------------------------------------------
@@ -98,13 +114,14 @@ class KHC_Notes_Content_ViewController: UIViewController {
     //----------------------------------------------------------------------
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         // Set events to be observed by the NSNotificationCenter
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardNotification:"), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardNotification:"), name:UIKeyboardWillHideNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardNotification:", name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardNotification:", name:UIKeyboardWillHideNotification, object: nil);
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("textFieldDidChange:"), name: UITextFieldTextDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldDidChange:", name: UITextFieldTextDidChangeNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textViewDidChange:", name: UITextViewTextDidChangeNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
@@ -143,11 +160,13 @@ class KHC_Notes_Content_ViewController: UIViewController {
     }
     
     override func viewDidDisappear(animated: Bool) {
+        
         super.viewDidDisappear(animated)
         
         reachability.stopNotifier()
         
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        
     }
     
     /*
@@ -168,7 +187,9 @@ class KHC_Notes_Content_ViewController: UIViewController {
     
     // Hide the keyboard when user taps any where on screen that is not textView or textField
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
         self.view.endEditing(true)
+        
     }
     
     //----------------------------------------------------------------------
@@ -197,26 +218,39 @@ class KHC_Notes_Content_ViewController: UIViewController {
                 animations: { self.view.layoutIfNeeded() },
                 completion: nil)
         }
+        
     }
     
     // Enable or disable the Done button based on whether either textField(s) have changed
     func textFieldDidChange(notification: NSNotification) {
+        
         if (KHC_Notes_Title.text != currentTitle) || (KHC_Notes_Subtitle.text != currentSubtitle) {
+            
             updateNoteStatus.enabled = true
+            
         }
         else {
+            
             updateNoteStatus.enabled = false
+            
         }
+        
     }
     
     // Enable or disable the Done button based on whether the textView has changed
     func textViewDidChange(notification: NSNotification) {
+        
         if KHC_Notes_Content.text != currentContent {
+            
             updateNoteStatus.enabled = true
+            
         }
         else {
+            
             updateNoteStatus.enabled = false
+            
         }
+        
     }
     
     // Check if the device is connected to the internet

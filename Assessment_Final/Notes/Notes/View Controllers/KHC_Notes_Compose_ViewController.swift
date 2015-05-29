@@ -82,8 +82,11 @@ class KHC_Notes_Compose_ViewController: UIViewController {
                         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                         alert.addAction(okAction)
                         self.presentViewController(alert, animated: true, completion: nil)
+                        
                     }
+                    
                 })
+                
             }
             else {
                 
@@ -95,6 +98,7 @@ class KHC_Notes_Compose_ViewController: UIViewController {
                 let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alert.addAction(okAction)
                 self.presentViewController(alert, animated: true, completion: nil)
+                
             }
             
         }
@@ -108,11 +112,14 @@ class KHC_Notes_Compose_ViewController: UIViewController {
                 KHC_Notes_Compose_Label_Title.text = "Please enter a title"
                 KHC_Notes_Compose_Label_Title.font = UIFont.boldSystemFontOfSize(14)
                 KHC_Notes_Compose_Label_Title.textColor = UIColor.redColor()
+                
             }
             else {
+                
                 KHC_Notes_Compose_Label_Title.text = "Title"
                 KHC_Notes_Compose_Label_Title.font = UIFont.systemFontOfSize(14)
                 KHC_Notes_Compose_Label_Title.textColor = UIColor.blackColor()
+                
             }
         }
     }
@@ -137,6 +144,7 @@ class KHC_Notes_Compose_ViewController: UIViewController {
     }
     
     override func viewDidDisappear(animated: Bool) {
+        
         super.viewDidDisappear(animated)
         
         reachability.stopNotifier()
@@ -156,7 +164,9 @@ class KHC_Notes_Compose_ViewController: UIViewController {
     
     // Hide the keyboard when user taps any where on screen that is not textView or textField
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
         self.view.endEditing(true)
+        
     }
     
     //----------------------------------------------------------------------
@@ -174,6 +184,7 @@ class KHC_Notes_Compose_ViewController: UIViewController {
         let isShowing = notification.name == UIKeyboardWillShowNotification
 
         if let userInfo = notification.userInfo {
+            
             let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
             let endFrameHeight = endFrame?.size.height ?? 0.0
             let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
@@ -186,6 +197,7 @@ class KHC_Notes_Compose_ViewController: UIViewController {
                 options: animationCurve,
                 animations: { self.view.layoutIfNeeded() },
                 completion: nil)
+            
         }
     }
     
@@ -195,10 +207,14 @@ class KHC_Notes_Compose_ViewController: UIViewController {
     func textFieldDidChange(notification: NSNotification) {
         
         if (KHC_Notes_Compose_Title.text != "") {
+            
             addNoteStatus.enabled = true
+            
         }
         else {
+            
             addNoteStatus.enabled = false
+            
         }
         
     }
@@ -219,6 +235,7 @@ class KHC_Notes_Compose_ViewController: UIViewController {
             //
         
         }
+        
     }
 
 }

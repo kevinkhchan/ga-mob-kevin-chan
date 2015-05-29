@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A1771121B045B4200BC98AB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1771111B045B4200BC98AB /* Reachability.swift */; };
-		0A2452AE1B0470370023A232 /* ReachabilityAlt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2452AD1B0470370023A232 /* ReachabilityAlt.swift */; };
 		0A5AF1431AFB5E1100F42714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5AF1421AFB5E1100F42714 /* AppDelegate.swift */; };
 		0A5AF1481AFB5E1100F42714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AF1461AFB5E1100F42714 /* Main.storyboard */; };
 		0A5AF14A1AFB5E1100F42714 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AF1491AFB5E1100F42714 /* Images.xcassets */; };
@@ -33,7 +32,6 @@
 /* Begin PBXFileReference section */
 		03C94C17A0CAECC62C5AA55D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		0A1771111B045B4200BC98AB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Classes/Reachability.swift; sourceTree = "<group>"; };
-		0A2452AD1B0470370023A232 /* ReachabilityAlt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityAlt.swift; path = Classes/ReachabilityAlt.swift; sourceTree = "<group>"; };
 		0A5AF13D1AFB5E1100F42714 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5AF1411AFB5E1100F42714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A5AF1421AFB5E1100F42714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		0A1771101B043BD000BC98AB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0A2452AD1B0470370023A232 /* ReachabilityAlt.swift */,
 				0A1771111B045B4200BC98AB /* Reachability.swift */,
 			);
 			name = Classes;
@@ -303,7 +300,6 @@
 			files = (
 				0A5AF1661AFB5FE900F42714 /* KHC_Notes_List_TableViewController.swift in Sources */,
 				0A5AF1691AFB680000F42714 /* KHC_Notes_Content_ViewController.swift in Sources */,
-				0A2452AE1B0470370023A232 /* ReachabilityAlt.swift in Sources */,
 				0A5AF16B1AFB9EF400F42714 /* KHC_Notes_Compose_ViewController.swift in Sources */,
 				0A1771121B045B4200BC98AB /* Reachability.swift in Sources */,
 				0A5AF1431AFB5E1100F42714 /* AppDelegate.swift in Sources */,
