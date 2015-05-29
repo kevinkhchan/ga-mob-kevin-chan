@@ -19,6 +19,8 @@ class KHC_Notes_List_TableViewController: PFQueryTableViewController {
     // MARK: - Properties
     //----------------------------------------------------------------------
     
+    // Set reachability to store the current status of the 
+    // internet connection for th device
     let reachability = Reachability.reachabilityForInternetConnection()
     
     //----------------------------------------------------------------------
@@ -45,21 +47,27 @@ class KHC_Notes_List_TableViewController: PFQueryTableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         super.viewDidAppear(animated)
         
+        // Refresh the list of objects in the PFQueryTableView
         loadObjects()
         
+        // Add an observer for any changes in the internet connection (via reachability)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
         reachability.startNotifier()
         
     }
     
     override func viewDidDisappear(animated: Bool) {
+        
         super.viewDidDisappear(animated)
         
         reachability.stopNotifier()
         
+        // Remove the any NSNotificationCenter Observers
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        
     }
 
     

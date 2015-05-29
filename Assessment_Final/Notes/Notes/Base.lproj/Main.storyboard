@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="KHC_NotesList_Cell" editingAccessoryType="checkmark" textLabel="ueh-jB-KSf" detailTextLabel="X0Q-0d-X1d" style="IBUITableViewCellStyleSubtitle" id="snr-dU-g9X" customClass="PFTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="KHC_NotesList_Cell" editingAccessoryType="checkmark" textLabel="ueh-jB-KSf" detailTextLabel="X0Q-0d-X1d" style="IBUITableViewCellStyleSubtitle" id="snr-dU-g9X" customClass="PFTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="snr-dU-g9X" id="bsD-gx-rwM">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -159,13 +159,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Notes Title" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="SDT-1I-rWZ">
-                                <rect key="frame" x="24" y="72" width="560" height="20"/>
+                                <rect key="frame" x="24" y="76" width="560" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Notes Subtitle" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-HQ-efU">
                                 <rect key="frame" x="24" y="100" width="560" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMc-UQ-RmE">
@@ -184,7 +184,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SDT-1I-rWZ" firstAttribute="top" secondItem="68L-y6-bEn" secondAttribute="bottom" constant="8" id="0FF-E1-oZB"/>
+                            <constraint firstItem="SDT-1I-rWZ" firstAttribute="top" secondItem="68L-y6-bEn" secondAttribute="bottom" constant="12" id="0FF-E1-oZB"/>
                             <constraint firstItem="cv9-HQ-efU" firstAttribute="trailing" secondItem="krO-Yt-nR7" secondAttribute="trailingMargin" id="4LV-E1-a8J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cMc-UQ-RmE" secondAttribute="trailing" constant="5" id="Cea-Ht-Rfx"/>
                             <constraint firstItem="hGw-6o-xae" firstAttribute="top" secondItem="OrU-Fz-ElQ" secondAttribute="bottom" constant="20" id="ELi-eq-KLS"/>
@@ -193,7 +193,7 @@
                             <constraint firstItem="SDT-1I-rWZ" firstAttribute="trailing" secondItem="krO-Yt-nR7" secondAttribute="trailingMargin" id="Whz-T3-cUp"/>
                             <constraint firstItem="SDT-1I-rWZ" firstAttribute="leading" secondItem="krO-Yt-nR7" secondAttribute="leadingMargin" constant="8" id="aWA-3y-uMa"/>
                             <constraint firstItem="cMc-UQ-RmE" firstAttribute="top" secondItem="cv9-HQ-efU" secondAttribute="bottom" constant="8" id="cHK-JZ-1ca"/>
-                            <constraint firstItem="cv9-HQ-efU" firstAttribute="top" secondItem="SDT-1I-rWZ" secondAttribute="bottom" constant="8" id="iE2-GI-j6L"/>
+                            <constraint firstItem="cv9-HQ-efU" firstAttribute="top" secondItem="SDT-1I-rWZ" secondAttribute="bottom" constant="4" id="iE2-GI-j6L"/>
                             <constraint firstItem="OrU-Fz-ElQ" firstAttribute="leading" secondItem="krO-Yt-nR7" secondAttribute="leadingMargin" constant="8" id="msW-B8-161"/>
                             <constraint firstItem="OrU-Fz-ElQ" firstAttribute="trailing" secondItem="krO-Yt-nR7" secondAttribute="trailingMargin" id="qIj-hH-mdw"/>
                             <constraint firstItem="OrU-Fz-ElQ" firstAttribute="top" secondItem="cMc-UQ-RmE" secondAttribute="bottom" constant="8" id="qzq-bS-6xX"/>
